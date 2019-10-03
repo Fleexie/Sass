@@ -1,0 +1,24 @@
+$paddingDefault: 20px;
+$margingTBdefault: 20px;
+$margingLRdefault: 10%;
+
+.padding{
+  padding: $paddingDefault;
+  &Double{
+    padding: $paddingDefault * 2;
+  }
+
+  &Half{
+    padding: $paddingDefault / 2;
+  }
+}
+
+.marging{
+  margin: $margingTBdefault $margingLRdefault;
+  &Double{
+    margin: $margingTBdefault*2, $margingLRdefault*2;
+  }
+  &Half{
+    margin: $margingTBdefault/2, $margingLRdefault/2;
+  }
+}

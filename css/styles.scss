@@ -1,0 +1,81 @@
+/*Importer fra andre scss/css filer */
+@import "colors";
+@import "spacings";
+
+$tablet: "screen and (min-width: 768px)";
+$computer: "screen and (min-width: 1200px)";
+
+
+body{
+  background-color: $primary;
+  color: aliceblue;
+  div{
+    background-color: azure;
+    color: black;
+    ol{
+      li{
+        padding: $paddingDefault
+      }
+    }
+    ul{
+      li{
+        color: black;
+      }
+    }
+  }
+}
+
+/*Gør den lysere*/
+.lighten{
+  background-color: lighten($primary, 20);
+}
+/*Gør den mørkere*/
+.darken{
+  background-color: darken($primary, 20);
+}
+/*Tilføje farve*/
+.saturate{
+  background-color: saturate($primary, 20);
+}
+/*Fjerne farve*/
+.desaturate{
+  background-color: desaturate($primary, 20);
+}
+/*Mix to farver sammen*/
+.mix{
+  background-color: mix($primary, $secondary);
+}
+/*Modsatte farve på farve hjulet*/
+.invert{
+  background-color: invert($primary);
+}
+/*Komplimentær farve*/
+.complement{
+  background-color: complement($primary);
+}
+
+/*Mixin
+I variabler er det bedst at sætte den til sidst man regner med at ændre mindst (hvis man har mere end en)*/
+@mixin blurTXT($blur: 5px, $transparency: 0.5){
+  color: transparent;
+  text-shadow: 0 0 $blur rgba(0, 0, 0, $transparency);
+}
+
+
+.blurExample{
+  font-size: larger;
+  @include blurTXT(10px);
+}
+
+
+@media #{$tablet} {
+
+}
+
+@media #{$computer} {
+  body{
+    margin: 0;
+    padding: 0;
+    background-color: cyan;
+  }
+}
